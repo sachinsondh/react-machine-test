@@ -1,0 +1,25 @@
+.home {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title { 
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+.home h1 {
+    color: #0d0e0f;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}

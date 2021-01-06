@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
-
-import axios from "axios";
-
+import React, { useEffect, useState } from "react";
+import "./UserComponent.css";
 const RendringList = (props) => {
-  const [Data, setData] = useState({});
-  const [index, setIndex] = useState(3);
+  const [data, setData] = useState({});
 
-  const url = props.url;
+  const [index, setIndex] = useState(3);
+  const [fetched, setFetched] = useState(false);
+
   const getData = async () => {
-    await axios
-      .get(url)
-      .then((response) => {
-        setData(response.data);
+    const res = await fetch(props.url);
+    res
+      .json()
+      .then((res) => {
+        setData(res);
+        setFetched(true);
       })
-      .catch((error) => console.log(error));
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -21,13 +22,12 @@ const RendringList = (props) => {
   }, []);
 
   const loadData = () => {
-    const nextIndex = index + 3;
-    setIndex(nextIndex);
+    const newIndex = index + 3;
+    setIndex(newIndex);
   };
-
   return (
     <div>
-      <div>{props.callback(Data, index)}</div>
+      <div>{fetched && props.callback(data, index)}</div>
       <div>
         <button onClick={loadData}>Load</button>
       </div>

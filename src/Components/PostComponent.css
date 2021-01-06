@@ -1,0 +1,40 @@
+.posts{
+    min-width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin : 30px;
+    
+  
+ }
+ .post{
+     width: 300px;
+     height: 350px;
+     display: flex;
+     margin-left: 12px;
+     margin-right: 8px;
+     border: 1px solid rgb(12, 12, 12);
+     padding-top: 6rem;
+     padding-bottom: 6rem;
+     text-align: center;
+     list-style: none;
+     overflow: hidden;
+     
+     
+ }
+
+ .title{
+     height: 60px ;
+     font-weight: 700;
+     font-size: 1.125rem;
+     line-height: 1.5rem;
+        color: #0c45b8;
+     
+         
+ 
+ }
+ .body{
+     margin-top: .3rem;
+     line-height: 2rem;
+     color: rgb(33, 43, 56);
+ }
+ 
